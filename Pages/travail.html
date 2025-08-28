@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Travail</title>
+  <link rel="stylesheet" href="../CSS/travail.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script src="../JS/travail.js" defer></script>
+</head>
+<body>
+
+  <div class="menu-container">
+    <button id="menu-toggle-button" class="menu-button" type="button" aria-label="Ouvrir le menu de navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <nav id="dropdown-menu" class="dropdown-menu">
+      <ul>
+        <li><a href="./accueil.html">Accueil</a></li>
+        <li><a href="./sante.html">Santé</a></li>
+        <li><a href="./vie-numerique.html">Vie Numérique</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <header>
+    <h1>Mon Espace Travail</h1>
+  </header>
+  
+  <main>
+    <article class="card">
+      <h2>Suivi des Notes</h2>
+      <div class="stat-principale">
+        <span class="stat-valeur" id="moyenne-generale">--/20</span>
+        <span class="stat-label">Moyenne Générale</span>
+      </div>
+      <ul id="liste-matieres" class="details-list"></ul>
+
+      <div id="chart-container" class="chart-container">
+        <canvas id="average-chart"></canvas>
+      </div>
+
+      <footer class="card-footer">
+        <button id="toggle-chart-button" class="icon-button" type="button" aria-label="Afficher/Cacher le graphique">
+          +
+        </button>
+      </footer>
+    </article>
+    
+    <article class="card">
+      <h2>Devoirs de la Semaine</h2>
+      <div class="stat-principale">
+        <span class="stat-valeur" id="progression-devoirs">--%</span>
+        <span class="stat-label">Progression</span>
+      </div>
+      <ul id="liste-devoirs" class="details-list"></ul>
+    </article>
+    
+    <article class="card">
+      <h2>Progression Duolingo</h2>
+      <div class="stat-principale">
+          <span class="stat-valeur" id="duolingo-streak">--</span>
+          <span class="stat-label">Jours de série (Streak)</span>
+      </div>
+      <ul id="liste-duolingo" class="details-list"></ul>
+    </article>    
+  </main>
+
+</body>
+</html>
