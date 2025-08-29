@@ -1,0 +1,68 @@
+/* On hérite des styles de base pour la cohérence */
+@import url('travail.css');
+
+/* --- Style de la carte principale --- */
+.main-stat-display {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.main-stat-display p {
+    margin: 0;
+    color: var(--text-color-secondary);
+    font-size: 1.1em;
+}
+
+.main-stat-display h2 {
+    margin: 8px 0 0 0;
+    font-size: 3.5em;
+    color: var(--accent-color);
+    border: none;
+    padding: 0;
+}
+
+/* Ajustement pour la hauteur du graphique principal */
+.card-expanded .chart-container {
+    height: 250px;
+}
+
+/* --- Style du graphique en anneau --- */
+.doughnut-container {
+    padding: 16px 0;
+    max-height: 250px;
+}
+
+/* --- Style de la liste des applications --- */
+#top-apps-list .app-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    background-color: var(--border-color);
+    border-radius: 6px;
+}
+
+#top-apps-list li {
+    align-items: center; /* Aligne l'icône et le texte verticalement */
+}
+
+/* --- Style de la carte des habitudes --- */
+.habits-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 200px;
+    padding: 16px 0;
+}
+
+.habit-stat {
+    text-align: center;
+}
+
+.habit-icon {
+    font-size: 2em;
+    display: block;
+}
+
+.habit-stat .stat-valeur {
+    font-size: 2em;
+}

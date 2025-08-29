@@ -4,10 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - Santé</title>
-  <link rel="stylesheet" href="../CSS/travail.css">
-  <script src="../JS/travail.js" defer></script> <!-- Réutilisation du script pour le menu -->
+  <link rel="stylesheet" href="../CSS/travail.css"> 
+  <link rel="stylesheet" href="../CSS/sante.css">
+  
+  <!-- LIGNE AJOUTÉE: Import de la bibliothèque SortableJS -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../JS/sante.js" defer></script>
 </head>
 <body>
+
   <div class="menu-container">
     <button id="menu-toggle-button" class="menu-button" type="button" aria-label="Ouvrir le menu de navigation">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -26,7 +33,49 @@
   </header>
   
   <main>
-    <p style="text-align: center;">Page en construction...</p>
+    <article class="card card-expanded">
+        <h2>Signes Vitaux (Nuit)</h2>
+        <div class="time-scale-selector">
+            <button class="time-scale-btn active">Jour</button>
+            <button class="time-scale-btn">Semaine</button>
+            <button class="time-scale-btn">Mois</button>
+            <button class="time-scale-btn">6M</button>
+            <button class="time-scale-btn">Année</button>
+        </div>
+        <div class="chart-container show">
+            <canvas id="vitals-chart"></canvas>
+        </div>
+    </article>
+    
+    <article class="card" id="card-activity">
+      <h2>Activité Quotidienne</h2>
+      <div class="rings-container">
+          <svg width="200" height="200" viewBox="0 0 100 100">
+              <circle class="ring-track" cx="50" cy="50" r="45"></circle>
+              <circle class="ring-progress" id="ring-move" cx="50" cy="50" r="45"></circle>
+              <circle class="ring-track" cx="50" cy="50" r="35"></circle>
+              <circle class="ring-progress" id="ring-exercise" cx="50" cy="50" r="35"></circle>
+              <circle class="ring-track" cx="50" cy="50" r="25"></circle>
+              <circle class="ring-progress" id="ring-stand" cx="50" cy="50" r="25"></circle>
+          </svg>
+      </div>
+    </article>
+
+    <article class="card" id="card-mental">
+      <h2>Santé Mentale</h2>
+      <div class="status-display">
+          <span class="status-icon">✅</span>
+          <p>Journal rempli cette semaine</p>
+      </div>
+    </article>
+    
+    <article class="card" id="card-ai">
+      <h2><span class="ai-icon">🤖</span> Analyse IA</h2>
+      <div class="ai-analysis-content">
+          <p id="ai-analysis-text"><em>Analyse en cours...</em></p>
+      </div>
+    </article>
   </main>
+
 </body>
 </html>

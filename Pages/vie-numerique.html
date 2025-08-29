@@ -4,9 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - Vie Numérique</title>
-  <link rel="stylesheet" href="../CSS/travail.css"> <!-- On réutilise le style pour la cohérence -->
+  <!-- On charge les styles de base, puis ceux de la page -->
+  <link rel="stylesheet" href="../CSS/travail.css">
+  <link rel="stylesheet" href="../CSS/vie-numerique.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../JS/vie-numerique.js" defer></script>
 </head>
 <body>
+
   <div class="menu-container">
     <button id="menu-toggle-button" class="menu-button" type="button" aria-label="Ouvrir le menu de navigation">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -15,17 +22,58 @@
       <ul>
         <li><a href="./accueil.html">Accueil</a></li>
         <li><a href="./travail.html">Travail</a></li>
-        <li><a href="./sante.html">Vie Numérique</a></li>
+        <li><a href="./sante.html">Santé</a></li>
       </ul>
     </nav>
   </div>
 
   <header>
-    <h1>Espace Santé</h1>
+    <h1>Vie Numérique</h1>
   </header>
   
   <main>
-    <p style="text-align: center;">Page en construction...</p>
+    <!-- Carte principale pour le temps total et l'historique -->
+    <article class="card card-expanded">
+        <div class="main-stat-display">
+            <p>Temps d'écran aujourd'hui</p>
+            <h2 id="total-screentime">--h --m</h2>
+        </div>
+        <div class="chart-container show">
+            <canvas id="weekly-screentime-chart"></canvas>
+        </div>
+    </article>
+    
+    <!-- Cartes secondaires -->
+    <article class="card">
+      <h2>Répartition par Catégorie</h2>
+      <div class="chart-container show doughnut-container">
+        <canvas id="category-doughnut-chart"></canvas>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Applications Principales</h2>
+      <ul id="top-apps-list" class="details-list">
+        <!-- Le JS remplira cette liste -->
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>Habitudes</h2>
+      <div class="habits-container">
+          <div class="habit-stat">
+              <span class="habit-icon">📱</span>
+              <span class="stat-valeur" id="phone-pickups">--</span>
+              <span class="stat-label">Prises en main</span>
+          </div>
+          <div class="habit-stat">
+              <span class="habit-icon">🔔</span>
+              <span class="stat-valeur" id="notifications-count">--</span>
+              <span class="stat-label">Notifications</span>
+          </div>
+      </div>
+    </article>
   </main>
+
 </body>
 </html>

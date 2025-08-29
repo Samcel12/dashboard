@@ -1,0 +1,110 @@
+/* On hérite des styles de base (body, header, card) pour la cohérence */
+@import url('travail.css');
+
+/* --- Style du sélecteur de période --- */
+.time-scale-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.time-scale-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    padding: 6px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-scale-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.time-scale-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* --- Style des anneaux d'activité (SVG) --- */
+.rings-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.rings-container svg {
+    transform: rotate(-90deg); /* Fait commencer les cercles en haut */
+}
+
+.ring-track {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 8;
+}
+
+.ring-progress {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-out;
+}
+
+/* Couleurs des anneaux */
+#ring-move { stroke: #ff3b30; } /* Rouge */
+#ring-exercise { stroke: #a4ff4f; } /* Vert */
+#ring-stand { stroke: #00c8ff; } /* Bleu */
+
+
+/* --- Style du statut de santé mentale --- */
+.status-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    min-height: 200px;
+}
+
+.status-icon {
+    font-size: 3em;
+}
+
+.status-display p {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* --- Style de l'analyse IA --- */
+.ai-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.ai-analysis-content p {
+    font-style: italic;
+    color: var(--text-color-secondary);
+    line-height: 1.6;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1 1 350px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  /* LIGNE AJOUTÉE: Change le curseur pour indiquer que la carte est déplaçable */
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+}
