@@ -1,0 +1,13 @@
+- Travail : 
+ - Suivi de ma moyenne générale et par matière 
+ - Avancement de la complétion de mes devoirs de la semaine en cours (ou suivante si on est en weekend) 
+ - Mon Duolingo (je sais pas trop ce que je pourrais rajouter mais je pense qu'il serait intéressant de le mettre)
+
+- Santé :
+ - Suivi de mes signes vitaux la nuit (BPM, Fréquence respiratoire, Température au poignet, Oxygène Sanguin, Temps de sommeil) avec différentes échelles :
+  - Jour, Semaine, Mois, Demi année, Année
+ - Activité physique (avec l'application Forme sur iOS)
+ - Mental (Est ce que j'ai rempli mon journal cette semaine sur l'application journal sur iOS)
+ - Le tout connecté à mon instance LM Studio hébergeant Gemma-3n-e4b ou gpt-oss 20B afin d'avoir une "analyse" de mes données
+
+- Vie numérique (probablement le moins important et pour lequel j'ai le moins d'idées)
